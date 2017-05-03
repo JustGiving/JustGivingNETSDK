@@ -1,4 +1,5 @@
 using System;
+using System.Net;
 using System.Reflection;
 using JustGivingSDK.Http;
 using JustGivingSDK.Logging;
@@ -10,7 +11,6 @@ namespace JustGivingSDK
     public class ClientOptions
     {
         private readonly string _appId;
-
         private string _sdkVersion;
 
         public ClientOptions(string appId)
@@ -28,9 +28,19 @@ namespace JustGivingSDK
             Endpoint = Endpoints.Production;
         }
 
+		public ClientOptions(string appId, IWebProxy proxy)
+		{
+			_appId = appId;
+			Proxy = proxy;
+			LoggingOptions = LoggingOptions.Default;
+			Endpoint = Endpoints.Production;
+		}
+
         public string AppId => _appId;
 
         public Uri Endpoint { get; set; }
+
+		public IWebProxy Proxy {get;set;}
 
         public OAuthAccessToken OAuthAccessToken { get; set; }
 

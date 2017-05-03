@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Net.Http;
 using JustGivingSDK.Clients.Account;
 using JustGivingSDK.Clients.Campaign;
@@ -205,6 +206,14 @@ namespace JustGivingSDK
         {
             _options.Endpoint = Endpoints.Production;
         }
+
+		/// <summary>
+		/// Tells the client to use the provided proxy for all calls
+		/// </summary>
+		public void UseProxy(IWebProxy proxy)
+		{
+			_options.Proxy = proxy;
+		}
 
         /// <summary>
         /// Gets or sets the underlying log infrastructure. Defaults to the Log4NetLogProvider.

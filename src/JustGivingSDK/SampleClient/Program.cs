@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Net;
 using System.Threading;
 using JustGivingSDK;
 using JustGivingSDK.Contracts.Account;
@@ -20,6 +21,9 @@ namespace SampleClient
 
             client.UseSandbox();
             client.LogEverything();
+
+			//If you need to set a proxy, do so like this
+			//client.UseProxy(new WebProxy()); 
 
             var password = Guid.NewGuid().ToString();
             var email = $"example-{Guid.NewGuid():N}@justgiving.com";

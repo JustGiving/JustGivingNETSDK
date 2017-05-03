@@ -14,7 +14,12 @@ namespace JustGivingSDK.Http
     {
         public HttpClient CreateClient(ClientOptions options)
         {
-            var client = new HttpClient
+			var handler = new HttpClientHandler();
+
+			if (options.Proxy != null)
+				handler.Proxy = options.Proxy;
+			       
+			var client = new HttpClient(handler)
             {
                 BaseAddress = options.Endpoint
             };
