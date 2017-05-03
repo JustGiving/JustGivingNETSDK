@@ -161,7 +161,7 @@ namespace JustGivingSDK.Clients.Fundraising
 
         public async Task<GetFundraisingPageDonationsResponse> GetFundraisingPageDonations(string pageShortName, int pageNumber = 1, int pageSize = 20)
         {
-            var resource = $"/v1/fundraising/pages/{pageShortName}/donations?pageNumber={pageNumber}&pageSize={pageSize}";
+            var resource = $"/v1/fundraising/pages/{pageShortName}/donations?pageNum={pageNumber}&pageSize={pageSize}";
             var request = new HttpRequestMessage(HttpMethod.Get, resource);
             return await Execute<GetFundraisingPageDonationsResponse>(request);
         }
