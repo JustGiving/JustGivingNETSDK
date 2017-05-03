@@ -35,7 +35,7 @@ namespace JustGivingSDK.Clients.Fundraising
         Task<IEnumerable<FundraisingPageSummary>> GetFundraisingPages();
         Task<GetFundraisingPageResponse> GetFundraisingPageDetails(int pageId);
         Task<GetFundraisingPageResponse> GetFundraisingPageDetails(string pageShortName);
-        Task<GetFundraisingPageDonationsResponse> GetFundraisingPageDonations(string pageShortName);
+        Task<GetFundraisingPageDonationsResponse> GetFundraisingPageDonations(string pageShortName, int pageNumber = 1, int pageSize = 20);
         Task<GetFundraisingPageDonationsResponse> GetFundraisingPageDonationsByReference(string pageShortName, string reference);
         Task UpdateFundraisingPage(string pageShortName, string storySupplement);
         Task UpdateFundraisingPageAttribution(string pageShortName, string attribution);
