@@ -28,5 +28,6 @@ var donations = await client.Fundraising.GetFundraisingPageDonations("pageShortN
 
 # Also see
 * [JustGiving API Developer Portal](http://developer.justgiving.com)
-[If you're trying to make donations using JustGiving](https://justgivingdeveloper.zendesk.com/hc/en-us/sections/201202061-Simple-Donation-Integration-SDI-)
-* [Config file for Postman that has collections of our http endpoints. ](https://github.com/JustGiving/JustGiving.Api.Tools.Postman)
+
+* [Simple Donation Integration](https://justgivingdeveloper.zendesk.com/hc/en-us/sections/201202061-Simple-Donation-Integration-SDI-)
+* [Postman Collection](https://github.com/JustGiving/JustGiving.Api.Tools.Postman)
