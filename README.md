@@ -1,28 +1,17 @@
 New public SDKs for the JustGiving Consumer API for Microsoft .NET
 
-
-## Improvements over the old .NET SDK
-
-- Supports authorization via OpenId Connect (OAuth2) and HTTP Basic
-- Consistent method and parameter names: they now match API resource URIs and the public documentation
-- Keeps developers aware of HTTP instead of ineffectively hiding it!
-- Performs extended logging of HTTP interactions for easier remote troubleshooting (no more "what's a header?")
-- Cleaner, easier configuration with sensible defaults
-- JSON only, no XML
-- Asynchronous
-- Removed support for whitelabel domains / RFL / API "versions" which don't exist
-- Less code, less clutter, less maintainence
-
-### Example:
+### QuickStart:
 
 ```
-var client = new JustGivingApiClient2("bafff466", new OAuthAccessToken("sdfijojweoimicew0932dnmosdf")); 
-client.UseSandbox();
+var string appId = "e488ce85";
+var client = new JustGivingApiClient(appId);
+
+//or, if you want to use methods requiring authentication
+//var authenticatedClient = new JustGivingApiClient(appId, new BasicCredential(email, password));
+//var oauthClient = new JustGivingApiClient(appId, applicationKey, new OAuthAccessToken(accessToken));
+
+client.UseProduction();
 client.LogEverything();
 
-var myContentFeed = await client.Accounts.GetContentFeed();
-
-if(myContentFeed.StatusCode == HttpStatusCode.Ok)
-{
-  return View("ContentFeed", myContentFeed.Data);
-}
+var donations = await client.Fundraising.GetFundraisingPageDonations("pageShortName",1,20);
+```
