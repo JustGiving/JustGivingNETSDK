@@ -24,10 +24,15 @@ var myAccountDetails = await client.Accounts.RetrieveAccount();
 
 var donations = await client.Fundraising.GetFundraisingPageDonations("pageShortName",1,20);
 ```
-
+---------------
 
 # Also see
 * [JustGiving API Developer Portal](http://developer.justgiving.com)
 
 * [Simple Donation Integration](https://justgivingdeveloper.zendesk.com/hc/en-us/sections/201202061-Simple-Donation-Integration-SDI-)
 * [Postman Collection](https://github.com/JustGiving/JustGiving.Api.Tools.Postman)
+
+---------------
+# Further Support
+
+If you're having issues that the resources above don't help with, feel free to email us at apisupport@justgiving.com
