@@ -33,6 +33,6 @@ var donations = await client.Fundraising.GetFundraisingPageDonations("pageShortN
 * [Postman Collection](https://github.com/JustGiving/JustGiving.Api.Tools.Postman)
 
 ---------------
-# Further Support
+# Support
 
 If you're having issues that the resources above don't help with, feel free to email us at apisupport@justgiving.com
