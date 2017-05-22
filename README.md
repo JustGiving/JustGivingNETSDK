@@ -1,28 +1,38 @@
-New public SDKs for the JustGiving Consumer API for Microsoft .NET
+# .NET SDK for the JustGiving API
 
+### QuickStart:
 
-## Improvements over the old .NET SDK
-
-- Supports authorization via OpenId Connect (OAuth2) and HTTP Basic
-- Consistent method and parameter names: they now match API resource URIs and the public documentation
-- Keeps developers aware of HTTP instead of ineffectively hiding it!
-- Performs extended logging of HTTP interactions for easier remote troubleshooting (no more "what's a header?")
-- Cleaner, easier configuration with sensible defaults
-- JSON only, no XML
-- Asynchronous
-- Removed support for whitelabel domains / RFL / API "versions" which don't exist
-- Less code, less clutter, less maintainence
-
-### Example:
-
+```powershell
+PM> Install-Package JustGivingNETSDK
 ```
-var client = new JustGivingApiClient2("bafff466", new OAuthAccessToken("sdfijojweoimicew0932dnmosdf")); 
-client.UseSandbox();
+
+```csharp
+var string appId = "e488ce85";
+var client = new JustGivingApiClient(appId);
+
+//or, if you want to use methods requiring authentication
+//var basicAuthenticationClient = new JustGivingApiClient(appId, new BasicCredential(email, password));
+//var oauthClient = new JustGivingApiClient(appId, applicationKey, new OAuthAccessToken(accessToken));
+
+client.UseProduction();
 client.LogEverything();
 
-var myContentFeed = await client.Accounts.GetContentFeed();
+//If you need to set a proxy, do so like this
+//client.UseProxy(new WebProxy()); 
 
-if(myContentFeed.StatusCode == HttpStatusCode.Ok)
-{
-  return View("ContentFeed", myContentFeed.Data);
-}
+var myAccountDetails = await client.Accounts.RetrieveAccount();
+
+var donations = await client.Fundraising.GetFundraisingPageDonations("pageShortName",1,20);
+```
+---------------
+
+# Also see
+* [JustGiving API Developer Portal](http://developer.justgiving.com)
+
+* [Simple Donation Integration](https://justgivingdeveloper.zendesk.com/hc/en-us/sections/201202061-Simple-Donation-Integration-SDI-)
+* [Postman Collection](https://github.com/JustGiving/JustGiving.Api.Tools.Postman)
+
+---------------
+# Support
+
+If you're having issues that the resources above don't help with, feel free to email us at apisupport@justgiving.com
