@@ -4,7 +4,7 @@ namespace JustGivingSDK.Contracts.Fundraising
 {
     public class Donation
     {
-        public int DonationId { get; set; }
+        public int Id { get; set; }
         public string DonationRef { get; set; }
         public string Image { get; set; }
         public bool HasImage { get; set; }
