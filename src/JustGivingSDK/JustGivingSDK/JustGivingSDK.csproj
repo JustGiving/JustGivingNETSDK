@@ -2,6 +2,18 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net452</TargetFrameworks>
+    <PackageId>JustGiving.NETSDK</PackageId>
+    <Version>1.0.2</Version>
+    <Authors>jonrowett, markgibaud</Authors>
+    <Company>markgibaud</Company>
+    <Product>JustGiving.NETSDK</Product>
+    <Description>C#.NET SDK for the JustGiving API</Description>
+    <Copyright>Copyright 2018</Copyright>
+    <PackageProjectUrl>https://github.com/JustGiving/JustGivingNETSDK</PackageProjectUrl>
+    <PackageIconUrl>https://www.justgiving.com/ui/2013/images/icons/G.jpg</PackageIconUrl>
+    <RepositoryUrl>https://github.com/JustGiving/JustGivingNETSDK</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>justgiving fundraising charity crowdfunding</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
