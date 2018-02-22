@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
-using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
@@ -75,17 +73,14 @@ namespace JustGivingSDK.Clients
 
         protected async Task<T> Execute<T>(HttpRequestMessage request)
         {
-            var jsonMediaTypeFormatter = new JsonMediaTypeFormatter();
-            jsonMediaTypeFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("application/json"));
-            var formatters = new List<MediaTypeFormatter>{ jsonMediaTypeFormatter };
-
             HttpResponseMessage response = null;
             try
             {
                 response = await _http.SendAsync(request);
                 response.EnsureSuccessStatusCode();
-                return await response.Content.ReadAsAsync<T>(formatters);
-            }
+				var responseContent = await response.Content.ReadAsStringAsync();
+				return JsonConvert.DeserializeObject<T>(responseContent);
+			}
             catch (Exception e)
             {
                 _logger.Error("An error occurred while executing an HTTP request", e);
