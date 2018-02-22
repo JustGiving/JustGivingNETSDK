@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{614A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JustGivingSDK", "JustGivingSDK\JustGivingSDK.csproj", "{7B4E3D32-800E-48BF-A50A-4E88E7CD2FC3}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleClient", "SampleClient\SampleClient.csproj", "{0A1704FC-AFA5-4E8A-927D-7B6EA360861B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,9 +19,16 @@ Global
 		{7B4E3D32-800E-48BF-A50A-4E88E7CD2FC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B4E3D32-800E-48BF-A50A-4E88E7CD2FC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B4E3D32-800E-48BF-A50A-4E88E7CD2FC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A1704FC-AFA5-4E8A-927D-7B6EA360861B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A1704FC-AFA5-4E8A-927D-7B6EA360861B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A1704FC-AFA5-4E8A-927D-7B6EA360861B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A1704FC-AFA5-4E8A-927D-7B6EA360861B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0A1704FC-AFA5-4E8A-927D-7B6EA360861B} = {614A6420-9085-441B-8A78-707769786990}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E44B9507-7186-43C4-B811-295761CEF86E}

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Net;
 using System.Threading;
 using JustGivingSDK;
 using JustGivingSDK.Contracts.Account;
